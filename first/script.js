@@ -58,13 +58,13 @@
 // Спрашивать какое слово он хочет добавить вместо удаленного и в итоге выводить полученную строку из массива.
 // Из элементов массива собрать предложение. Вместо текущего имени в массиве, добавьте ваше,
 // используя splice
-let message = ["Hello!", "My", "name", "is", "Arsen"]
+// let message = ["Hello!", "My", "name", "is", "Arsen"]
 
-let index = +prompt("Какое слово из message.length по очереди хотите удалить " + message.join(" ")) // prompt - string
-index-- // позиция удаленного слова
-// "2", 2
-let str = prompt("Какое слово вы хотите использовать вместо удаленного")
+// let index = +prompt("Какое слово из message.length по очереди хотите удалить " + message.join(" ")) // prompt - string
+// index-- // позиция удаленного слова
+// // "2", 2
+// let str = prompt("Какое слово вы хотите использовать вместо удаленного")
 
-message.splice(index, 1, str)
+// message.splice(index, 1, str)
 
-console.log(message.join(" "))
+// console.log(message.join(" "))

@@ -19,3 +19,9 @@ function myMap(array, callback) {
 
     return newArr
 }
+
+function forEach(array, callback) {
+    for(let i = 0; i < array.length; i++) {
+        newArr.push(callback(array[i], i)) // 1, 2, 3, 4 ,5
+    }
+}
