@@ -1,0 +1,13 @@
+input {
+    padding: 20px;
+    margin: 10px;
+    border: none;
+    outline: none;
+    background-color: gray;
+}
+
+button {
+    padding: 20px;
+    border: none;
+    outline: none;
+}

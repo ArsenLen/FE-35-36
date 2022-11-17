@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+.book {
+    width: 30%;
+    padding: 20px;
+    background-color: salmon;
+    border-radius: 8px;
+    margin: 10px
+}
+h1 {
+    text-align: center
+}
+p {
+    font-size: 36px
+}
+button {
+    padding: 20px 10px;
+    font-size: 18px;
+    background-color: crimson;
+    border: none;
+    outline: none;
+    border-radius: 8px
+}
