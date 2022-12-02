@@ -39,6 +39,7 @@ main {
 }
 .product-name {
     font-size: 24px;
+    margin-bottom: 15px;
 }
 .product-price {
     font-size: 20px;
