@@ -99,7 +99,8 @@ showProducts(laptops)
 
 // Функция поиска по введеному значению
 searchInput.addEventListener("input", (e) => {
-    const value = e.target.value // e.target.value - введенная строка
+    const value = e.target.value.trim() // e.target.value - введенная строка
+    // trim() - удаляет пробелы в начале и в конце строки
     // фильтруем массив laptops по содержанию строки e.target.value
     // в свойстве name каждого объекта массива
     const filteredByValueProducts = laptops.filter(laptop => 

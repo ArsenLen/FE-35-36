@@ -8,7 +8,30 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <input type="text">
-    <button>Hello</button>
+    
+    <main>
+        <form class="add-form">
+            <input type="text" class="product-name" placeholder="Имя продукта...">
+            <input type="submit">
+        </form>
+        <div class="products-wrapper">
+            <div class="product">
+                <h5>Название продукта</h5>
+                <div class="product-actions">
+                    <button class="delete-btn">Удалить</button>
+                    <button class="delete-btn">Редактировать</button>
+                </div>
+            </div>
+            <div class="product">
+                <h5>Название продукта</h5>
+                <div class="product-actions">
+                    <button class="delete-btn">Удалить</button>
+                    <button class="delete-btn">Редактировать</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>

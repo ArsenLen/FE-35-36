@@ -4,43 +4,40 @@
     box-sizing: border-box;
 }
 body {
+    background-color: #E8EAEE;
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color:  #E8EAEE;
 }
 main {
     width: 700px;
-    background: #FFFFFF;
-    margin: 40px 0;
+    background-color: white;
     border-radius: 20px;
+    margin: 40px 0;
 }
 .add-form {
-    /* border-radius: 20px 20px 0px 0px; */
     padding: 24px;
     display: flex;
     gap: 10px;
 }
-input[type="text"] {
+.add-name {
     width: 100%;
     padding: 24px;
-    background: #F2F4F8;
+    background-color:  #F2F4F8;
     border-radius: 12px;
     font-size: 20px;
-    font-weight: 500;
     border: none;
     outline: none;
 }
-input[type="submit"] {
-    padding: 24px;
-    background: #000000;
-    border-radius: 12px;
-    font-size: 20px;
-    font-weight: 500;
+.submit-btn {
+    padding: 24px 12px;
+    background-color: black;
+    font-size: 24px;
     color: white;
+    border-radius: 12px;
 }
 .products-wrapper {
-    padding: 24px 0 24px 24px;
+    padding: 24px;
+    padding-right: 0;
 }
 .product {
     display: flex;
@@ -53,17 +50,18 @@ input[type="submit"] {
 }
 .product:hover {
     background-color: #E8EAEE;
+    transition: 1s;
 }
-h5 {
-    font-size: 16px;
+.product-name {
+    font-size: 18px;
 }
 .product-actions {
-    padding-right: 20px;
+    padding-right: 24px;
 }
 button {
+    padding: 20px;
     border: none;
     outline: none;
-    padding: 20px;
     border-radius: 8px;
-    background-color:  #d4d5d8;
+    background-color: #F2F4F8;
 }
