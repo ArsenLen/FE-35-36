@@ -65,3 +65,22 @@ button {
     border-radius: 8px;
     background-color: #F2F4F8;
 }
+.notification {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.notification.success {
+    background-color: rgb(81, 179, 124);
+}
+.notification.danger {
+    background-color: red;
+}
+.notification-text {
+    font-size: 20px;
+    text-align: center;
+}
