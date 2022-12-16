@@ -78,9 +78,11 @@ button {
     background-color: rgb(81, 179, 124);
 }
 .notification.danger {
-    background-color: red;
+    background-color: rgb(188, 109, 109);
 }
 .notification-text {
     font-size: 20px;
     text-align: center;
 }
+/* showNotification("Продукт добавлен", "success") */
+/* showNotification("Продукт удален", "danger") */
