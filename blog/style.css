@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form {
+    width: 50%;
+    margin: 0 auto 40px;
+    background-color: khaki;
+    padding: 30px;
+}
+h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+input {
+    display: block;
+    width: 80%;
+    margin: 0 auto 15px;
+    padding: 20px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+input[type="submit"] {
+    width: 50%;
+    background-color: cornflowerblue;
+}
+.container {
+    width: 50%;
+    margin: auto;
+}
+.post {
+    padding: 30px;
+    background-color: khaki;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+h5 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.post-descr {
+    font-size: 22px;
+}
