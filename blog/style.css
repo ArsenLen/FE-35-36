@@ -45,3 +45,12 @@ h5 {
 .post-descr {
     font-size: 22px;
 }
+.delete-btn {
+    margin-top: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: crimson;
+    font-size: 18px;
+}

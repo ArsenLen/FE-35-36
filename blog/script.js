@@ -54,9 +54,10 @@ const container = document.querySelector('.container')
 const form = document.querySelector('form')
 const title = document.querySelector("input[name='title']")
 const descr = document.querySelector("input[name='descr']")
+const URL = "http://localhost:3000/posts"
 // функия получения данных с сервера, посредством GET-запроса
 const fetchData = () => {
-    fetch("http://localhost:3000/posts", {
+    fetch(URL, {
         method: "GET"
     }) // возвращает промис
     .then((response) => {
@@ -76,12 +77,7 @@ const showData = (arr) => {
     // отобразить данные о посте, которые получили с сервера, в html.
     container.innerHTML = '' 
     arr.map(el => {
-        container.innerHTML += `
-            <div class="post">
-                <h5>${el.title}</h5>
-                <p class="post-descr">${el.descr}</p>
-            </div>
-        `
+        showNewPost(el) // функция отрисовки html разметки с данными объекта el (el = {title: "Title", descr: "Descr"})
     })
 }
 
@@ -101,7 +97,7 @@ form.addEventListener("submit", (e) => {
 
 // функция отправки POST запроса на сервер с телом, получаемым в аргумент
 const addPost = (post) => {
-    fetch("http://localhost:3000/posts", {
+    fetch(URL, {
         method : "POST",
         headers : {
             "Content-Type" : "application/json"
@@ -123,6 +119,7 @@ const showNewPost = (post) => {
         <div class="post">
             <h5>${post.title}</h5>
             <p class="post-descr">${post.descr}</p>
+            <button class="delete-btn" id=${post.id}>Удалить</button>
         </div>
     `
 }
@@ -132,20 +129,66 @@ const clearInputs = () => {
     descr.value = ''
 }
 
+// вешаем слушатель события на document
+document.addEventListener("click", (e) => {
+    if(e.target.className === "delete-btn") { // includes()
+        deletePost(e.target)
+    }
+})
 
-const Main = () => {
-    const [title, setTitle] = useState('')
-    // title = "e"
-    // title = "et"
-    return (
-        <div>
-            <input 
-                value={title}
-                onChange={e => setTitle(e.target.value)} // e // et
-            />
-        </div>
-    )
+const deletePost = (btn) => {
+    fetch(`${URL}/${btn.id}` , {
+        method : "DELETE"
+    })
+    .then(() => {
+        // в ответе на DELETE приходить пустой объект {}
+        // из HTML удалить элемент,на кнопку которого мы нажали
+        // 404/ response.ok === false. 200/ response.ok === true
+        if(response.ok) {
+            btn.parentElement.remove()
+        }
+    })
+    .catch()
 }
+/*
+    ... 
+    UPDATE - (PUT)
+    1. Создать кнопку "Редактировать"
+    2. Вешаем слушатель события
+    3. При нажатии, вызываем фукнцию, которая меняет в карточке элемента теги 
+        h5, p на input[type="text"]
+        вывести кнопку сохранить 
+        UI 
+    4. По нажатию на "сохранить" вызывать функцию, которая будет отправлять на сервер обновленные данные,
+        введенные в инпуты из п.3
+    5. В функции из п4. реализовать fetch(method: "PUT"), в теле передать данные из п4
+*/
+/*
+    ctrl+shift+R - обновить с обновлением кэша
+
+    При отправке DELETE нам нужно обратиться к конкретному документу по его id. 
+    const URL = http://localhost:3000/posts
+    `${URL}/${id}`
+    http://localhost:3000/posts/{id} 
+*/
+
+// при нажатии на кнопку удалить, отображать "console.log("удалено")"
+// для того, чтобы отличать клики, можно заглянуть в e.target. Если в объекте события
+// target имеет класс delete-btn, то делаем что-то
+
+// const Main = () => {
+//     const [title, setTitle] = useState('')
+//     // title = "e"
+//     // title = "et"
+//     return (
+//         <div>
+//             <input 
+//                 value={title}
+//                 onChange={e => setTitle(e.target.value)} // e // et
+//             />
+//         </div>
+//     )
+// }
 
 /*
     
